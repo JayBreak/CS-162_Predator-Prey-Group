@@ -9,7 +9,6 @@ protected:
 	int row;
 	int col;
 public:
-
 	Critter();
 	void set_row(int);
 	void set_col(int);

@@ -6,22 +6,22 @@ Critter::Critter() {
 	time_steps_taken = 0;
 }
 
-void set_row(int r)
+void Critter::set_row(int r)
 {
 	row = r;
 }
 
-void set_col(int c)
+void Critter::set_col(int c)
 {
 	col = c;
 }
 
-void get_row()
+int Critter::get_row()
 {
 	return row;
 }
 
-void get_col()
+int Critter::get_col()
 {
 	return col;
 }
