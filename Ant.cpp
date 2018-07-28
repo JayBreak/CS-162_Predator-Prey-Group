@@ -13,7 +13,10 @@ bool Ant::valid_move(critter* critters, int direction) {
 
 	if (random == 0)
 	{
-		for(int i = 0; i <)
+		/*for (int i = 0; i < )
+		{
+
+		}*/
 	}
 }
 

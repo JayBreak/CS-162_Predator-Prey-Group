@@ -1,6 +1,8 @@
 #include "Ant.hpp"
 #include "Doodlebug.hpp"
+#include "Critter.hpp"
 #include "file.hpp"
+#include "game.hpp"
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
@@ -9,6 +11,8 @@ using namespace std;
 
 int main() {
 	srand(time(NULL));
+
+	int *num_ants = 0;
 
 	intro();		//prints intro - in file.cpp
 
@@ -22,14 +26,15 @@ int main() {
 		g->createBoard();
 
 //create ant and doodlebug vectors
-		Ant* ants = new Ant[num_ants];
-		Doodlebug* doodlebugs = new Doodlebug[num_doodlebugs];
+		Ant* ants = new Ant[g->getnum_ant()];
+		Doodlebug* doodlebugs = new Doodlebug[g->getnum_doodlebugs()];
 
 //populate grid with characters
-		grid = pop_grid(grid, rows, cols, num_ants, num_doodlebugs, doodlebugs, ants);
+		//Why are we setting this equal to grid?
+		grid = pop_grid(grid, g->getRows(), g->getCols(), g->getnum_ant(), g->getnum_doodlebugs(), doodlebugs, ants);
 
 //play game
-		game_play(grid, num_steps, num_ants, num_doodlebugs, doodlebugs, ants, rows, cols);
+		game_play(grid, g->getnum_steps(), g->getnum_ant(), num_doodlebugs, doodlebugs, ants, rows, cols);
 
 //delete dynamic memory
 		delete [] ants;

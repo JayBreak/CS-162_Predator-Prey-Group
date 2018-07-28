@@ -4,6 +4,10 @@
 using namespace std;
 
 class Critter {
+protected:
+	int time_steps_taken;
+	int row;
+	int col;
 public:
 
 	Critter();
@@ -17,9 +21,6 @@ public:
 	virtual char** move(char**);
 	virtual char** breed(char**);
 
-protected:
-	int time_steps_taken;
-	int row;
-	int col;
+
 };
 #endif

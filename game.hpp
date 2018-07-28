@@ -15,6 +15,12 @@ public:
        set_Info();
        createBoard();
        addCritter(Critter);
+	   int getnum_ant();
+	   int getnum_doodlebugs();
+	   int getnum_critters();
+	   int getRows();
+	   int getCols();
+	   int getnum_steps();
 
 
 protected:

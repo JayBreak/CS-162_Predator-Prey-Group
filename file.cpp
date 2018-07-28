@@ -119,31 +119,31 @@ char** pop_grid(char** grid, int rows, int cols, int num_ants, int num_doodlebug
 	return grid;
 }
 
-void game_play(char** grid, int num_steps, int num_ants, int num_doodlebugs, Doodlebug* doodlebugs, Ant* ants, int rows, int cols) {
+void game_play(char** grid, game *g, Doodlebug* doodlebugs, Ant* ants) {
 	int steps_taken = 1;
 	bool eaten = false;
 	cout << "Starting Grid:" << endl;
-	print_grid(grid, rows, cols);
-	cout << "Number of Ants: " << num_ants << endl;
-	cout << "Number of Doodlebugs: " << num_doodlebugs << endl;
+	print_grid(grid, g->getRows(), g->getCols);
+	cout << "Number of Ants: " << g->getnum_ants() << endl;
+	cout << "Number of Doodlebugs: " << g->getnum_doodlebugs() << endl;
 	cout << endl;
 	do{
-		for (int i = 0; i < num_doodlebugs; i++) {
-			if (doodlebugs[i].valid_move(grid, doodlebugs, i, rows, cols) == true) {
-				grid = doodlebugs[i].move(grid, doodlebugs, i, rows, cols, eaten);
+		for (int i = 0; i < g->getnum_doodlebugs(); i++) {
+			if (doodlebugs[i].valid_move(grid, doodlebugs, i, g->getRows(), g->getCols()) == true) {
+				grid = doodlebugs[i].move(grid, doodlebugs, i, g->getRows(), g->getCols(), eaten);
 				if (eaten == true) {
-					num_ants--;
-					ants = ants->resize_ants(ants, num_ants);
+					g->setnum_ants(1);
+					ants = ants->resize_ants(ants, g->getnum_ants());
 				}
 			}
 		}
 		cout << "Time Step " << steps_taken << ":" << endl;
-		print_grid(grid, rows, cols);
-		cout << "Number of Ants: " << num_ants << endl;
-		cout << "Number of Doodlebugs: " << num_doodlebugs << endl;
+		print_grid(grid, g->getRows(), g->getCols());
+		cout << "Number of Ants: " << g->getnum_ants() << endl;
+		cout << "Number of Doodlebugs: " << g->getnum_doodlebugs() << endl;
 		cout << endl;
 		steps_taken++;
-	}while (steps_taken != num_steps);
+	}while (steps_taken != g->getnum_steps());
 }
 
 void print_grid(char** grid, int rows, int cols) {
