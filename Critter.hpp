@@ -11,6 +11,7 @@ public:
 	void set_col(int);
 	void get_row();
 	void get_col();
+	void resize(critter,int);
 
 	virtual bool valid_move();
 	virtual char** move(char**);
