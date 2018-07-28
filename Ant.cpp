@@ -10,7 +10,7 @@ Ant::Ant() {
 }
 
 bool Ant::valid_move(char** grid, Ant* ants) {
-	
+
 }
 
 char** Ant::move(char** grid, Ant* ants) {
@@ -18,7 +18,7 @@ char** Ant::move(char** grid, Ant* ants) {
 }
 
 char** Ant::breed(char** grid, Ant* ants) {
-	
+
 }
 
 Ant* Ant::resize_ants(Ant* ants, int num_ants) {
