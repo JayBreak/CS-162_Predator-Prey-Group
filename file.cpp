@@ -6,6 +6,41 @@
 
 using namespace std;
 
+//////////////////////////////////////////////////////////////////////
+// Function: intro
+// Description: prints intor text
+// Parameters: n/a
+// Return: n/a
+//////////////////////////////////////////////////////////////////////
+void intro()
+{
+       space(100);
+       cout << "======================================================" << endl;
+       cout << "" << endl;
+       cout << "                    Pedator Prey Game " << endl;
+       cout <<"              Created by: <insert names here>" << endl;
+       cout << "" << endl;
+	cout << "		  **Extra Credit Included!**" << endl;
+	cout << "" << endl;
+       cout << "======================================================" << endl;
+       space(15);
+}
+
+//////////////////////////////////////////////////////////////////////
+// Function: space
+// Description: prints numer of blank lines based on input
+// Parameters: integer
+// Return: n/a
+//////////////////////////////////////////////////////////////////////
+void space(int x)
+{
+     for (int i = 0; i < x; i++)   // loops how many lines you want to space
+     {
+          cout << " " << endl;
+     }
+     return;
+}
+
 int menu() {
 	int answer;
 	string num;

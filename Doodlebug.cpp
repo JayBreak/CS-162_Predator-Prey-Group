@@ -7,8 +7,8 @@
 using namespace std;
 
 Doodlebug::Doodlebug() {
-	doodlebug_row = 1;
-	doodlebug_col = 1;
+	row = 1;
+	col = 1;
 }
 
 bool Doodlebug::valid_move(char** grid, Doodlebug* doodlebugs, int num, int rows, int cols) {
@@ -30,7 +30,7 @@ char** Doodlebug::move(char** grid, Doodlebug* doodlebugs, int num, int rows, in
 		doodlebugs[num].doodlebug_row++;
 		grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col] = 'X';
 		doodlebugs[num].time_steps_taken = 0;
-		eaten = true;	
+		eaten = true;
 	}else if (grid[doodlebugs[num].doodlebug_row-1][doodlebugs[num].doodlebug_col] == 'O') {
 		grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col] = ' ';
 		doodlebugs[num].doodlebug_row--;

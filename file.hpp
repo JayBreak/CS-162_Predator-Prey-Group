@@ -6,6 +6,8 @@
 
 using namespace std;
 
+void intro();
+void space(int);            //prints x number of blank lines
 int menu();
 int prompt_number();
 bool is_int(string);
