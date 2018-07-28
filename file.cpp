@@ -101,8 +101,8 @@ char** pop_grid(char** grid, int rows, int cols, int num_ants, int num_doodlebug
 		int rand_col = rand() % cols + 1;
 		if (grid[rand_row][rand_col] == ' ') {
 			grid[rand_row][rand_col] = 'O';
-			ants[num_ants].set_ant_row(rand_row);
-			ants[num_ants].set_ant_col(rand_col);
+			ants[num_ants].set_row(rand_row);
+			ants[num_ants].set_col(rand_col);
 			num_ants--;
 		}
 	}
@@ -111,8 +111,8 @@ char** pop_grid(char** grid, int rows, int cols, int num_ants, int num_doodlebug
 		int rand_col = rand() % cols + 1;
 		if (grid[rand_row][rand_col] == ' ') {
 			grid[rand_row][rand_col] = 'X';
-			doodlebugs[num_doodlebugs].set_doodlebug_row(rand_row);
-			doodlebugs[num_doodlebugs].set_doodlebug_col(rand_col);
+			doodlebugs[num_doodlebugs].set_row(rand_row);
+			doodlebugs[num_doodlebugs].set_col(rand_col);
 			num_doodlebugs--;
 		}
 	}
