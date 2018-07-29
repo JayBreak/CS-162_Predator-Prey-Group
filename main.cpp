@@ -26,20 +26,21 @@ int main() {
 		g->createBoard();
 
 //create ant and doodlebug vectors
-		Ant* ants = new Ant[g->getnum_ant()];
+		Ant* ants = new Ant[g->getnum_ants()];
 		Doodlebug* doodlebugs = new Doodlebug[g->getnum_doodlebugs()];
 
 //populate grid with characters
 		//Why are we setting this equal to grid?
-		grid = pop_grid(grid, g->getRows(), g->getCols(), g->getnum_ant(), g->getnum_doodlebugs(), doodlebugs, ants);
+		grid = pop_grid(grid, g->getRows(), g->getCols(), g->getnum_ants(), g->getnum_doodlebugs(), doodlebugs, ants);
 
 //play game
-		game_play(grid, g->getnum_steps(), g->getnum_ant(), num_doodlebugs, doodlebugs, ants, rows, cols);
+		//game_play(grid, g->getnum_steps(), g->getnum_ant(), num_doodlebugs, doodlebugs, ants, rows, cols);
+		game_play(grid, g, doodlebugs, ants);
 
 //delete dynamic memory
 		delete [] ants;
 		delete [] doodlebugs;
-		for (int i = 0; i < rows+2; i++)
+		for (int i = 0; i < g->getRows()+2; i++)
 			delete grid[i];
 		delete [] grid;
 
