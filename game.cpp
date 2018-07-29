@@ -1,4 +1,5 @@
 #include "game.hpp"
+#include "file.hpp"
 #include <iostream>
 
 using std::cout;
@@ -41,9 +42,14 @@ void game::createBoard()
 }
 
 
-int game::getnum_ant()
+int game::getnum_ants()
 {
 	return num_ant;
+}
+
+void game::setnum_ants(int i)
+{
+	num_ant -= i;
 }
 
 int game::getnum_doodlebugs()

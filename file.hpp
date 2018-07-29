@@ -14,7 +14,6 @@ int prompt_number();
 bool is_int(string);
 int get_int(string);
 char** pop_grid(char**, int, int, int, Doodlebug*, Ant*, int, int);
-//void game_play(char**, int*, int*, int*, Doodlebug*, Ant*, int*, int*);
-void game_play(char**, game g, Doodlebug*, Ant*);
+void game_play(char**, game *g, Doodlebug*, Ant*);
 void print_grid(char**, int, int);
 #endif

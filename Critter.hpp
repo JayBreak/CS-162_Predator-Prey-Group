@@ -12,8 +12,8 @@ public:
 	Critter();
 	void set_row(int);
 	void set_col(int);
-	void get_row();
-	void get_col();
+	int get_row();
+	int get_col();
 	void resize(critter,int);
 
 	virtual bool valid_move();

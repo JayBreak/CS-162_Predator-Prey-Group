@@ -15,7 +15,8 @@ public:
        set_Info();
        createBoard();
        addCritter(Critter);
-	   int getnum_ant();
+	   int getnum_ants();
+	   void setnum_ants(int);
 	   int getnum_doodlebugs();
 	   int getnum_critters();
 	   int getRows();
