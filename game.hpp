@@ -12,9 +12,9 @@ public:
 
        game();
        ~game();
-       set_Info();
-       createBoard();
-       addCritter(Critter);
+       void set_Info();
+       void createBoard();
+       void addCritter(Critter);
 	   int getnum_ants();
 	   void setnum_ants(int);
 	   int getnum_doodlebugs();

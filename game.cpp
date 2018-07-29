@@ -41,6 +41,11 @@ void game::createBoard()
 		grid[i] = new char[cols+2];
 }
 
+void game::addCritter(Critter)
+{
+
+}
+
 
 int game::getnum_ants()
 {

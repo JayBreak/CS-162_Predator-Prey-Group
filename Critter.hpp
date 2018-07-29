@@ -14,7 +14,7 @@ public:
 	void set_col(int);
 	int get_row();
 	int get_col();
-	void resize(critter,int);
+	void resize(Critter,int);
 
 	virtual bool valid_move();
 	virtual char** move(char**);

@@ -9,8 +9,13 @@ Ant::Ant() {
 	col = 1;
 }
 
-bool Ant::valid_move(char** grid,Ant* ant, int direction) {
+Ant::~Ant()
+{
 
+}
+
+bool Ant::valid_move(char** grid,Ant* ant, int direction) {
+	int random = 0;
 	if (random == 0)
 	{
 		/*for (int i = 0; i < )
@@ -22,7 +27,7 @@ bool Ant::valid_move(char** grid,Ant* ant, int direction) {
 
 char** Ant::move(char** grid, Ant* ants) {
 	int direction = rand() % 4;  // 0 up, 1 right, 2 down, 3 left.
-	if(valid_move(gird,ants,direction))
+	if(valid_move(grid,ants,direction))
 	{
 
 	}

@@ -6,6 +6,11 @@ Critter::Critter() {
 	time_steps_taken = 0;
 }
 
+void Critter::resize(Critter, int)
+{
+
+}
+
 void Critter::set_row(int r)
 {
 	row = r;
