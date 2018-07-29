@@ -12,15 +12,19 @@ Doodlebug::Doodlebug() {
 }
 
 bool Doodlebug::valid_move(char** grid, Doodlebug* doodlebugs, int num, int rows, int cols) {
+	int move = 0;
 	if (grid[doodlebugs[num].doodlebug_row+1][doodlebugs[num].doodlebug_col] != '-' && grid[doodlebugs[num].doodlebug_row+1][doodlebugs[num].doodlebug_col] != '|' && grid[doodlebugs[num].doodlebug_row+1][doodlebugs[num].doodlebug_col] != 'X')
+		move++;
+	if (grid[doodlebugs[num].doodlebug_row-1][doodlebugs[num].doodlebug_col] != '-' && grid[doodlebugs[num].doodlebug_row-1][doodlebugs[num].doodlebug_col] != '|' && grid[doodlebugs[num].doodlebug_row-1][doodlebugs[num].doodlebug_col] != 'X')
+		move++;
+	if (grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col+1] != '-' && grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col+1] != '|' && grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col+1] != 'X')
+		move++;
+	if (grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col-1] != '-' && grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col-1] != '|' && grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col-1] != 'X')
+		move++;
+	if (move == 0)
+		return false;
+	else
 		return true;
-	else if (grid[doodlebugs[num].doodlebug_row-1][doodlebugs[num].doodlebug_col] != '-' && grid[doodlebugs[num].doodlebug_row-1][doodlebugs[num].doodlebug_col] != '|' && grid[doodlebugs[num].doodlebug_row-1][doodlebugs[num].doodlebug_col] != 'X')
-		return true;
-	else if (grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col+1] != '-' && grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col+1] != '|' && grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col+1] != 'X')
-		return true;
-	else if (grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col-1] != '-' && grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col-1] != '|' && grid[doodlebugs[num].doodlebug_row][doodlebugs[num].doodlebug_col-1] != 'X')
-		return true;
-	return false;
 }
 
 char** Doodlebug::move(char** grid, Doodlebug* doodlebugs, int num, int rows, int cols, bool &eaten) {
